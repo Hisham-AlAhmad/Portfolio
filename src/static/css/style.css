@@ -1,0 +1,274 @@
+/********** Template CSS **********/
+:root {
+    --primary: #8b0000;
+    --light: #bfbfbf;
+    --dark: #1a1a1a;
+}
+
+.ff-secondary {
+    font-family: 'Rubik', sans-serif;
+}
+
+.fw-medium {
+    font-weight: 600 !important;
+}
+
+.fw-semi-bold {
+    font-weight: 700 !important;
+}
+
+.back-to-top {
+    position: fixed;
+    right: 45px;
+    bottom: 45px;
+    z-index: 99;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.home-menu {
+    text-align: center;
+}
+
+.home-menu a {
+    margin: 10px;
+}
+/*** Spinner ***/
+#spinner {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-out, visibility 0s linear 0.5s;
+    z-index: 99999;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+}
+
+#spinner.show {
+    transition: opacity 0.5s ease-out, visibility 0s linear 0s;
+    visibility: visible;
+    opacity: 1;
+}
+
+.spinner-border {
+    width: 3rem;
+    height: 3rem;
+}
+
+/*** Button ***/
+.btn {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: .5s;
+}
+
+.btn.btn-primary,
+.btn.btn-secondary {
+    color: #FFFFFF;
+}
+
+.btn-square {
+    width: 38px;
+    height: 38px;
+}
+
+.btn-sm-square {
+    width: 32px;
+    height: 32px;
+}
+
+.btn-lg-square {
+    width: 48px;
+    height: 48px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+    border-radius: 2px;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 85px;
+    min-height: 100vh;
+}
+
+.content {
+    flex: 1;
+    /* Pushes the footer down */
+}
+
+
+/*** Hero Header ***/
+.hero-header img {
+    animation: imgRotate 50s linear infinite;
+}
+
+.text-sh{
+    background: linear-gradient(90deg, rgba(255, 161, 22, 0.8) 0%, rgba(255, 255, 255, 0.8) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: gold;
+}
+@keyframes imgRotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.breadcrumb-item+.breadcrumb-item::before {
+    color: rgba(255, 255, 255, .5);
+}
+
+/* Default styles for the image */
+.hero-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.hero-preview {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Adjust the image size and centering for screens between 767px and 992px */
+@media (min-width: 767.98px) and (max-width: 992px) {
+    .hero-image {
+        max-width: 70%;
+        margin: 0 auto;
+    }
+}
+/*** Section Title ***/
+.section-title {
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::before {
+    position: absolute;
+    content: "";
+    width: 45px;
+    height: 2px;
+    top: 50%;
+    left: -55px;
+    margin-top: -1px;
+    background: var(--primary);
+}
+
+.section-title::after {
+    position: absolute;
+    content: "";
+    width: 45px;
+    height: 2px;
+    top: 50%;
+    right: -55px;
+    margin-top: -1px;
+    background: var(--primary);
+}
+
+.section-title.text-start::before,
+.section-title.text-end::after {
+    display: none;
+}
+
+
+/*** Service ***/
+.service-item {
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.08);
+    transition: 0.5s;
+    text-align: center;
+}
+
+.service-item:hover {
+    background: var(--primary);
+}
+
+.service-item * {
+    transition: 0.5s;
+}
+
+.service-item:hover * {
+    color: var(--dark) !important;
+}
+
+/* Reduce sizes for better fit */
+.service-item .p-3 {
+    padding: 15px;
+}
+
+.service-item h6 {
+    font-size: 16px;
+}
+
+.service-item p {
+    font-size: 14px;
+}
+
+.service-item i {
+    font-size: 40px;
+}
+
+/*** Team ***/
+.team-item {
+    box-shadow: 0 0 45px rgba(0, 0, 0, .08);
+    transition: .3s;
+}
+
+@media (max-width: 767.98px) {
+    .team-item {
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    .team-item .rounded-circle {
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    .team-item img {
+        width: 100%;
+        height: auto;
+    }
+
+    .team-item .rounded-circle.overflow-hidden.m-4 {
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+}
+
+.lines {
+    background-color: var(--dark);
+}
+
+/* removed the number up / down from the number input */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
