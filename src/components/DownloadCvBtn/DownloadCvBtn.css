@@ -1,0 +1,88 @@
+/* Download CV Button */
+.cv-download-btn {
+  position: relative;
+  padding: 1rem 2rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  outline: none;
+  background: linear-gradient(90deg, #8b0000 0%, #b30000 100%);
+  color: white;
+  overflow: hidden;
+}
+
+.cv-download-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #a00000 0%, #cc0000 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.cv-download-btn:hover:not(:disabled) {
+  transform: scale(1.05);
+  box-shadow: 0 20px 25px -5px rgba(139, 0, 0, 0.6);
+}
+
+.cv-download-btn:hover:not(:disabled)::before {
+  opacity: 1;
+}
+
+.cv-download-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.cv-download-btn.downloaded {
+  background: linear-gradient(90deg, #16a34a 0%, #22c55e 100%);
+}
+
+.cv-download-btn.downloaded::before {
+  background: linear-gradient(90deg, #15803d 0%, #16a34a 100%);
+}
+
+.cv-download-btn.downloading {
+  cursor: wait;
+}
+
+.btn-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Icon animations */
+.icon-check {
+  animation: scale-in 0.3s ease;
+}
+
+.icon-downloading {
+  animation: bounce-download 1s ease-in-out infinite;
+}
+
+@keyframes scale-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes bounce-download {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}

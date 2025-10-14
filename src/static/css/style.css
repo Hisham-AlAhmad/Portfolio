@@ -5,6 +5,10 @@
     --dark: #1a1a1a;
 }
 
+.bg-primary {
+    background-color: #8b0000 !important
+}
+
 .ff-secondary {
     font-family: 'Rubik', sans-serif;
 }
