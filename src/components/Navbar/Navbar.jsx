@@ -5,7 +5,7 @@ import "./navbar.css";
 const Navbar = () => {
     const location = useLocation();
     const navbarCollapseRef = useRef(null);
-    
+
     // Function to close the navbar
     const closeNavbar = () => {
         if (navbarCollapseRef.current && navbarCollapseRef.current.classList.contains('show')) {
@@ -18,17 +18,17 @@ const Navbar = () => {
             }
         }
     };
-    
+
     // Close navbar when route changes
     useEffect(() => {
         closeNavbar();
     }, [location]);
-    
+
     // Close navbar when clicking outside
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (
-                navbarCollapseRef.current && 
+                navbarCollapseRef.current &&
                 !navbarCollapseRef.current.contains(event.target) &&
                 !event.target.classList.contains('navbar-toggler') &&
                 !event.target.classList.contains('fa-bars')
@@ -36,28 +36,28 @@ const Navbar = () => {
                 closeNavbar();
             }
         };
-        
+
         document.addEventListener('mousedown', handleClickOutside);
         return () => {
             document.removeEventListener('mousedown', handleClickOutside);
         };
     }, []);
-    
+
     return (
-        <nav className="navbar navbar-expand-md navbar-dark bg-dark sticky-top shadow-sm px-4 px-lg-5 py-lg-0">
+        <nav className="navbar navbar-expand-md sticky-top shadow-sm px-4 px-lg-5 py-lg-0">
             {/* Logo */}
             <NavLink to="/" className="navbar-brand p-0 d-flex align-items-center me-auto">
                 <img src="/img/logo/darkHA_circle.png" alt="HA" className="img-fluid" />
             </NavLink>
 
             {/* Toggler Button for Mobile */}
-            <button 
-                className="navbar-toggler" 
-                type="button" 
-                data-bs-toggle="collapse" 
-                data-bs-target="#navbarCollapse" 
-                aria-controls="navbarCollapse" 
-                aria-expanded="false" 
+            <button
+                className="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarCollapse"
+                aria-controls="navbarCollapse"
+                aria-expanded="false"
                 aria-label="Toggle navigation"
             >
                 <span className="fa fa-bars"></span>
@@ -65,7 +65,7 @@ const Navbar = () => {
 
             {/* Links */}
             <div className="collapse navbar-collapse" id="navbarCollapse" ref={navbarCollapseRef}>
-                <div className="navbar-nav ms-auto py-0 pe-4 text-center">	
+                <div className="navbar-nav ms-auto py-0 pe-4 text-center">
                     <NavLink to="/"
                         className={({ isActive }) =>
                             `nav-item nav-link ${isActive ? 'active' : ''}`

@@ -9,7 +9,7 @@
   transition: all 0.3s ease;
   border: none;
   outline: none;
-  background: linear-gradient(90deg, #8b0000 0%, #b30000 100%);
+  background: var(--gradient-primary);
   color: white;
   overflow: hidden;
 }
@@ -18,14 +18,14 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, #a00000 0%, #cc0000 100%);
+  background: var(--gradient-primary-hover);
   opacity: 0;
   transition: opacity 0.3s ease;
 }
 
 .cv-download-btn:hover:not(:disabled) {
   transform: scale(1.05);
-  box-shadow: 0 20px 25px -5px rgba(139, 0, 0, 0.6);
+  box-shadow: 0 20px 25px -5px var(--shadow-primary);
 }
 
 .cv-download-btn:hover:not(:disabled)::before {

@@ -1,6 +1,6 @@
 .text-type {
   display: inline-block;
-  color: #ff6b6b;
+  color: var(--accent-primary);
 }
 
 .text-type__cursor {

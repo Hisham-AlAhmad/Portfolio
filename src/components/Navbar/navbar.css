@@ -1,72 +1,85 @@
 /*** Navbar ***/
-.navbar-dark .navbar-nav .nav-link {
+.navbar .navbar-nav .nav-link {
     position: relative;
     margin-left: 25px;
     padding: 30px 0;
     font-size: 15px;
-    color: var(--light) !important;
+    color: var(--text-secondary) !important;
     text-transform: uppercase;
     font-weight: 500;
     outline: none;
     transition: .5s;
 }
 
-.sticky-top.navbar-dark .navbar-nav .nav-link {
+.sticky-top.navbar .navbar-nav .nav-link {
     padding: 20px 5px;
 }
 
-.navbar-dark .navbar-nav .nav-link:hover,
-.navbar-dark .navbar-nav .nav-link.active {
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .nav-link.active {
     color: var(--primary) !important;
 }
 
-.navbar-dark .navbar-brand img {
+.navbar .navbar-brand img {
     max-height: 85px;
     transition: .5s;
     max-width: 100%;
 }
 
-.sticky-top.navbar-dark .navbar-brand img {
+.sticky-top.navbar .navbar-brand img {
     max-height: 70px;
 }
 
+/* Navbar background colors based on theme */
+.navbar {
+    background: transparent !important;
+}
+
+.sticky-top.navbar {
+    background: var(--bg-secondary) !important;
+    border-bottom: 1px solid var(--border-light);
+}
+
 @media (max-width: 767.98px) {
-    .sticky-top.navbar-dark .navbar-nav .nav-link {
+    .sticky-top.navbar .navbar-nav .nav-link {
         padding: 10px 0;
     }
 
-    .navbar-dark .navbar-toggler {
+    .navbar .navbar-toggler {
         border: none;
         outline: none;
-        color: var(--light);
-        background: var(--dark);
+        color: var(--text-primary);
+        background: var(--bg-tertiary);
         padding: 10px 15px;
         border-radius: 2px;
     }
 
-    .navbar-dark .navbar-collapse {
+    .navbar .navbar-collapse {
         margin-top: 15px;
-        border-top: 1px solid rgba(255, 255, 255, .1);
+        border-top: 1px solid var(--border-light);
         width: 100%;
         margin-left: 20%;
         margin-right: 20%;
+        background: var(--bg-secondary);
+        padding: 1rem;
+        border-radius: 0.5rem;
     }
 
-    .navbar-dark .navbar-nav .nav-link,
+    .navbar .navbar-nav .nav-link,
     .navbar-nav .nav-link {
         padding: 10px 0;
         margin-left: 0;
     }
 
-    .sticky-top.navbar-dark {
+    .sticky-top.navbar {
         position: fixed;
         width: 100%;
-        background: var(--dark) !important;
+        background: var(--bg-secondary) !important;
     }
 }
 
 @media (min-width: 768px) {
-    .navbar-dark {
+    .navbar {
         position: absolute;
         width: 100%;
         height: 85px;
@@ -76,8 +89,9 @@
         background: transparent !important;
     }
 
-    .sticky-top.navbar-dark {
+    .sticky-top.navbar {
         position: fixed;
-        background: var(--dark) !important;
+        background: var(--bg-secondary) !important;
+        backdrop-filter: blur(10px);
     }
 }

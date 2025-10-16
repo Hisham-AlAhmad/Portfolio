@@ -1,0 +1,222 @@
+/* ============================================
+   CSS VARIABLES - COLOR SYSTEM
+   ============================================ */
+
+:root {
+  /* ==================== BRAND COLORS (Never change) ==================== */
+  --primary: #8b0000;        /* Main brand red - used for primary actions */
+  --light: #bfbfbf;          /* Light gray - used for subtle elements */
+  --dark: #1a1a1a;           /* Dark background - main dark color */
+
+  /* ==================== OTHER COLORS (Theme-aware) ==================== */
+  
+  /* Background Colors */
+  --bg-primary: #0a0a0a;     /* Main background (darker than --dark) */
+  --bg-secondary: #1a1a1a;   /* Secondary background (cards, sections) */
+  --bg-tertiary: #2a2a2a;    /* Tertiary background (hover states) */
+  
+  /* Text Colors */
+  --text-primary: #ffffff;   /* Main text color (headings, important text) */
+  --text-secondary: #cbd5e1; /* Secondary text (paragraphs, descriptions) */
+  --text-muted: #94a3b8;     /* Muted text (labels, captions) */
+  
+  /* Accent Colors */
+  --accent-primary: #ff6b6b; /* Soft red accent (highlights, hover states) */
+  --accent-secondary: #b30000; /* Darker red accent (buttons, links) */
+  
+  /* Border Colors */
+  --border-light: rgba(255, 255, 255, 0.1);  /* Light borders */
+  --border-medium: rgba(255, 255, 255, 0.2); /* Medium borders */
+  --border-primary: rgba(139, 0, 0, 0.3);    /* Primary colored borders */
+  
+  /* Overlay Colors (for glassmorphism, modals, etc.) */
+  --overlay-light: rgba(255, 255, 255, 0.05); /* Light overlay */
+  --overlay-dark: rgba(0, 0, 0, 0.5);         /* Dark overlay */
+  --overlay-red: rgba(139, 0, 0, 0.15);       /* Red tinted overlay */
+  --overlay-gray: rgba(191, 191, 191, 0.08);  /* Gray tinted overlay */
+  
+  /* Shadow Colors */
+  --shadow-sm: rgba(0, 0, 0, 0.1);   /* Small shadow */
+  --shadow-md: rgba(0, 0, 0, 0.25);  /* Medium shadow */
+  --shadow-lg: rgba(0, 0, 0, 0.5);   /* Large shadow */
+  --shadow-primary: rgba(139, 0, 0, 0.6); /* Primary colored shadow (glows) */
+  
+  /* Gradient Colors */
+  --gradient-primary: linear-gradient(90deg, #8b0000 0%, #b30000 100%);
+  --gradient-primary-hover: linear-gradient(90deg, #a00000 0%, #cc0000 100%);
+  --gradient-text: linear-gradient(90deg, #ffffff 0%, #bfbfbf 50%, #e0e0e0 100%);
+  --gradient-bg: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+  
+  /* State Colors */
+  --success: #16a34a;        /* Success state (green) */
+  --success-hover: #15803d;  /* Success hover */
+  --warning: #eab308;        /* Warning state (yellow) */
+  --error: #dc2626;          /* Error state (red) */
+  --info: #3b82f6;           /* Info state (blue) */
+}
+
+/* ==================== LIGHT MODE ==================== */
+[data-theme="light"] {
+  /* Brand Colors */
+  --primary: #8b0000;
+  --light: #bfbfbf;
+  --dark: #1a1a1a;
+
+  /* Background Colors */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f5f5f5;
+  --bg-tertiary: #e5e5e5;
+  
+  /* Text Colors */
+  --text-primary: #1a1a1a;
+  --text-secondary: #4b5563;
+  --text-muted: #6b7280;
+  
+  /* Accent Colors */
+  --accent-primary: #c41e3a;  /* Adjusted red for light mode */
+  --accent-secondary: #8b0000;
+  
+  /* Border Colors */
+  --border-light: rgba(0, 0, 0, 0.1);
+  --border-medium: rgba(0, 0, 0, 0.2);
+  --border-primary: rgba(139, 0, 0, 0.3);
+  
+  /* Overlay Colors */
+  --overlay-light: rgba(0, 0, 0, 0.05);
+  --overlay-dark: rgba(0, 0, 0, 0.3);
+  --overlay-red: rgba(139, 0, 0, 0.1);
+  --overlay-gray: rgba(0, 0, 0, 0.05);
+  
+  /* Shadow Colors */
+  --shadow-sm: rgba(0, 0, 0, 0.05);
+  --shadow-md: rgba(0, 0, 0, 0.1);
+  --shadow-lg: rgba(0, 0, 0, 0.2);
+  --shadow-primary: rgba(139, 0, 0, 0.3);
+  
+  /* Gradient Colors */
+  --gradient-primary: linear-gradient(90deg, #8b0000 0%, #b30000 100%);
+  --gradient-primary-hover: linear-gradient(90deg, #a00000 0%, #cc0000 100%);
+  --gradient-text: linear-gradient(90deg, #1a1a1a 0%, #4b5563 50%, #6b7280 100%);
+  --gradient-bg: linear-gradient(135deg, #ffffff 0%, #f5f5f5 50%, #ffffff 100%);
+  
+  /* State Colors */
+  --success: #15803d;
+  --success-hover: #166534;
+  --warning: #ca8a04;
+  --error: #b91c1c;
+  --info: #1d4ed8;
+}
+
+/* ==================== CYBERPUNK THEME ==================== */
+[data-theme="cyberpunk"] {
+  /* Brand Colors */
+  --primary: #00ff9f;
+  --light: #00d4ff;
+  --dark: #0a0e27;
+
+  /* Brand Colors */
+  --primary: #00ff9f;
+  --light: #00d4ff;
+  --dark: #0a0e27;
+  
+  /* Background Colors */
+  --bg-primary: #0a0e27;
+  --bg-secondary: #1a1f3a;
+  --bg-tertiary: #2a2f4a;
+  
+  /* Text Colors */
+  --text-primary: #00ff9f;
+  --text-secondary: #00d4ff;
+  --text-muted: #8b9bb4;
+  
+  /* Accent Colors */
+  --accent-primary: #ff00ff;
+  --accent-secondary: #ff6bff;
+  
+  /* Border Colors */
+  --border-light: rgba(0, 255, 159, 0.2);
+  --border-medium: rgba(0, 255, 159, 0.4);
+  --border-primary: rgba(255, 0, 255, 0.5);
+  
+  /* Overlay Colors */
+  --overlay-light: rgba(0, 255, 159, 0.1);
+  --overlay-dark: rgba(10, 14, 39, 0.8);
+  --overlay-red: rgba(255, 0, 255, 0.2);
+  --overlay-gray: rgba(0, 212, 255, 0.1);
+  
+  /* Shadow Colors */
+  --shadow-sm: rgba(0, 255, 159, 0.3);
+  --shadow-md: rgba(0, 255, 159, 0.5);
+  --shadow-lg: rgba(0, 255, 159, 0.7);
+  --shadow-primary: rgba(255, 0, 255, 0.6);
+  
+  /* Gradient Colors */
+  --gradient-primary: linear-gradient(90deg, #00ff9f 0%, #00d4ff 100%);
+  --gradient-primary-hover: linear-gradient(90deg, #00ffbf 0%, #00e4ff 100%);
+  --gradient-text: linear-gradient(90deg, #00ff9f 0%, #00d4ff 50%, #ff00ff 100%);
+  --gradient-bg: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0a0e27 100%);
+  
+  /* State Colors */
+  --success: #00ff9f;
+  --success-hover: #00e68a;
+  --warning: #ffd700;
+  --error: #ff006e;
+  --info: #00d4ff;
+}
+
+/* ==================== OCEAN THEME ==================== */
+[data-theme="ocean"] {
+  /* Brand Colors */
+  --primary: #0077be;
+  --light: #90e0ef;
+  --dark: #001e3c;
+
+  /* Brand Colors */
+  --primary: #0077be;
+  --light: #90e0ef;
+  --dark: #001e3c;
+  
+  /* Background Colors */
+  --bg-primary: #001e3c;
+  --bg-secondary: #003566;
+  --bg-tertiary: #00509d;
+  
+  /* Text Colors */
+  --text-primary: #caf0f8;
+  --text-secondary: #90e0ef;
+  --text-muted: #48cae4;
+  
+  /* Accent Colors */
+  --accent-primary: #00b4d8;
+  --accent-secondary: #0096c7;
+  
+  /* Border Colors */
+  --border-light: rgba(202, 240, 248, 0.15);
+  --border-medium: rgba(202, 240, 248, 0.3);
+  --border-primary: rgba(0, 180, 216, 0.4);
+  
+  /* Overlay Colors */
+  --overlay-light: rgba(202, 240, 248, 0.08);
+  --overlay-dark: rgba(0, 30, 60, 0.7);
+  --overlay-red: rgba(0, 180, 216, 0.15);
+  --overlay-gray: rgba(144, 224, 239, 0.1);
+  
+  /* Shadow Colors */
+  --shadow-sm: rgba(0, 119, 190, 0.2);
+  --shadow-md: rgba(0, 119, 190, 0.3);
+  --shadow-lg: rgba(0, 119, 190, 0.5);
+  --shadow-primary: rgba(0, 180, 216, 0.4);
+  
+  /* Gradient Colors */
+  --gradient-primary: linear-gradient(90deg, #0077be 0%, #00b4d8 100%);
+  --gradient-primary-hover: linear-gradient(90deg, #0088cc 0%, #00c6ff 100%);
+  --gradient-text: linear-gradient(90deg, #caf0f8 0%, #90e0ef 50%, #48cae4 100%);
+  --gradient-bg: linear-gradient(135deg, #001e3c 0%, #003566 50%, #001e3c 100%);
+  
+  /* State Colors */
+  --success: #38b000;
+  --success-hover: #2d9000;
+  --warning: #ffaa00;
+  --error: #e63946;
+  --info: #00b4d8;
+}

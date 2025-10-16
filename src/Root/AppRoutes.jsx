@@ -4,12 +4,12 @@ import Home from "../components/Home";
 
 function AppRoutes() {
   return (
-            <Routes>
-              {/* User side routes */}
-              <Route element={<Layout />} >
-                <Route path="/" element={<Home />} />
-              </Route>
-            </Routes>
+    <Routes>
+      {/* User side routes */}
+      <Route element={<Layout />} >
+        <Route path="/" element={<Home />} />
+      </Route>
+    </Routes>
 
   );
 }

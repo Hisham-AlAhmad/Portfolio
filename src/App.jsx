@@ -1,4 +1,5 @@
 import "./static/css/style.css";
+import "./static/css/variables.css";
 import "./static/css/bootstrap.min.css";
 import "./static/js/main.js";
 import AppRoutes from "./Root/AppRoutes.jsx";
