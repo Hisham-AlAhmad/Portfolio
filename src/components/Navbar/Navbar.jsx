@@ -1,10 +1,16 @@
 import { NavLink, useLocation } from "react-router-dom";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import { UseTheme } from "../Hooks/ThemeProvider";
 import "./navbar.css";
 
 const Navbar = () => {
     const location = useLocation();
     const navbarCollapseRef = useRef(null);
+
+    const { theme, setTheme } = UseTheme();
+    const [imgPath, setImgPath] = useState(() => {
+        return localStorage.getItem("logo") || "/img/logo/darkHA_circle.png";
+    });
 
     // Function to close the navbar
     const closeNavbar = () => {
@@ -23,6 +29,11 @@ const Navbar = () => {
     useEffect(() => {
         closeNavbar();
     }, [location]);
+
+    // Save the logo path to local storage whenever it changes
+    useEffect(() => {
+        localStorage.setItem("logo", imgPath);
+    })
 
     // Close navbar when clicking outside
     useEffect(() => {
@@ -43,12 +54,25 @@ const Navbar = () => {
         };
     }, []);
 
+    const handleThemeChange = () => {
+        // Toggle between light and dark themes
+        const newTheme = theme === 'light' ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', newTheme);
+        setTheme(newTheme);
+        localStorage.setItem('theme', newTheme);
+
+        // chnage logo based on theme
+        setImgPath(newTheme === 'dark' ? '/img/logo/darkHA_circle.png' : '/img/logo/lightHA_circle.png');
+    };
+
     return (
         <nav className="navbar navbar-expand-md sticky-top shadow-sm px-4 px-lg-5 py-lg-0">
             {/* Logo */}
-            <NavLink to="/" className="navbar-brand p-0 d-flex align-items-center me-auto">
-                <img src="/img/logo/darkHA_circle.png" alt="HA" className="img-fluid" />
-            </NavLink>
+            <div className="navbar-brand p-0 d-flex align-items-center me-auto">
+                <img src={imgPath} alt="HA" className="img-fluid"
+                    onClick={handleThemeChange}
+                />
+            </div>
 
             {/* Toggler Button for Mobile */}
             <button

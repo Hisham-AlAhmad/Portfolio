@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import { UseTheme } from '../Hooks/ThemeProvider';
 import './ThemeSettings.css';
 
 const ThemeSettings = () => {
@@ -10,10 +11,7 @@ const ThemeSettings = () => {
         ocean: { primary: '#0077be', light: '#90e0ef', dark: '#001e3c' }
     };
 
-    // Get saved theme or default to 'dark'
-    const [theme, setTheme] = useState(() => {
-        return localStorage.getItem('theme') || 'dark';
-    });
+    const { theme, setTheme } = UseTheme();
 
     // Get saved theme colors or defaults
     const [themeColors, setThemeColors] = useState(() => {
