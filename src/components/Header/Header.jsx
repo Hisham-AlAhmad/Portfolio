@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import DownloadCvBtn from "../DownloadCvBtn/DownloadCvBtn";
+import { UseTheme } from '../Hooks/ThemeProvider';
 import TextType from "../TextType/TextType";
 import './Header.css';
 
 const Header = () => {
     const [scrollY, setScrollY] = useState(0);
+    const { theme, setTheme } = UseTheme();
 
     useEffect(() => {
         const handleScroll = () => setScrollY(window.scrollY);
@@ -13,6 +15,14 @@ const Header = () => {
     }, []);
 
     const roles = ['Full Stack Developer', 'React Developer', 'Python Developer'];
+
+    const handleThemeChange = () => {
+        // Toggle between cyberpunk and dark themes
+        const newTheme = theme === 'cyberpunk' ? 'dark' : 'cyberpunk';
+        document.documentElement.setAttribute('data-theme', newTheme);
+        setTheme(newTheme);
+        localStorage.setItem('theme', newTheme);
+    };
 
     return (
         <div className="header-container">
@@ -67,6 +77,8 @@ const Header = () => {
                         <div className="cta-buttons">
                             <DownloadCvBtn />
 
+                            {/* !!!!!!!!!!! */}
+                            {/* Make this btn go down to contact me section! */}
                             <button className="btn-secondary">
                                 Get In Touch
                             </button>
@@ -74,14 +86,15 @@ const Header = () => {
 
                         {/* Social Links */}
                         <div className="social-links">
-                            <a href="#" className="social-icon">
+                            <a href="https://github.com/Hisham-AlAhmad"
+                                target="_blank" className="social-icon"
+                            >
                                 <i className="ti ti-brand-github"></i>
                             </a>
-                            <a href="#" className="social-icon">
+                            <a href="https://www.linkedin.com/in/hisham-al-ahmad-356508296/"
+                                target="_blank" className="social-icon"
+                            >
                                 <i className="ti ti-brand-linkedin"></i>
-                            </a>
-                            <a href="#" className="social-icon">
-                                <i className="ti ti-mail"></i>
                             </a>
                         </div>
                     </div>
@@ -115,7 +128,9 @@ const Header = () => {
                                 <div className="floating-badge badge-1">
                                     <span>⚡</span>
                                 </div>
-                                <div className="floating-badge badge-2">
+                                <div className="floating-badge badge-2"
+                                    onClick={handleThemeChange}
+                                >
                                     <span>💻</span>
                                 </div>
                             </div>

@@ -24,6 +24,7 @@
     max-height: 85px;
     transition: .5s;
     max-width: 100%;
+    cursor: pointer;
 }
 
 .sticky-top.navbar .navbar-brand img {

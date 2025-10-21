@@ -6,8 +6,8 @@ import "./navbar.css";
 const Navbar = () => {
     const location = useLocation();
     const navbarCollapseRef = useRef(null);
-
     const { theme, setTheme } = UseTheme();
+    
     const [imgPath, setImgPath] = useState(() => {
         return localStorage.getItem("logo") || "/img/logo/darkHA_circle.png";
     });

@@ -323,6 +323,7 @@
   border: 1px solid var(--border-light);
   width: 4rem;
   height: 4rem;
+  cursor: pointer;
   animation-delay: 0.5s;
   animation-duration: 2.5s;
 }
