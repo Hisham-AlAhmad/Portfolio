@@ -26,7 +26,7 @@ const TextType = ({ text = [] }) => {
           setCurrentTextIndex((currentTextIndex + 1) % texts.length);
         }
       }
-    }, isDeleting ? 35 : 50); // Deleting : Typing - speed
+    }, isDeleting ? 25 : 35); // Deleting : Typing - speed
 
     return () => clearTimeout(timeout);
   }, [currentText, isDeleting, currentTextIndex, texts]);
