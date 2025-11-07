@@ -17,8 +17,8 @@ const StickerPeel = ({ imageSrc, name }) => {
         const target = dragTargetRef.current;
         if (!target) return;
 
-        const randomX = Math.random() * 800; // 0% to 80%
-        const randomY = Math.random() * 350; // 0% to 80%
+        const randomX = Math.random() * 1000;
+        const randomY = Math.random() * 370;
         const randomRot = Math.random() * 40 - 20; // -20deg to 20deg
 
         gsap.set(target, {
