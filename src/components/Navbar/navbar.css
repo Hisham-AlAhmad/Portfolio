@@ -24,11 +24,19 @@
     max-height: 85px;
     transition: .5s;
     max-width: 100%;
+    border-radius: 50%;
     cursor: pointer;
 }
 
 .sticky-top.navbar .navbar-brand img {
     max-height: 70px;
+}
+
+.navbar-brand:hover img {
+    background-image: url('/img/logo/lightHA_circle.png');
+    background: linear-gradient(135deg, #8b0000, #bfbfbf);
+    box-shadow: 0 0 15px #bfbfbf, 0 0 20px #8b0000;
+    transform: scale(1.05);
 }
 
 /* Navbar background colors based on theme */

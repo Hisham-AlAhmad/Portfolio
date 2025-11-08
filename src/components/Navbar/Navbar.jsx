@@ -7,7 +7,8 @@ const Navbar = () => {
     const location = useLocation();
     const navbarCollapseRef = useRef(null);
     const { theme, setTheme } = UseTheme();
-    
+    const [isHovered, setIsHovered] = useState(false);
+
     const [imgPath, setImgPath] = useState(() => {
         return localStorage.getItem("logo") || "/img/logo/darkHA_circle.png";
     });
@@ -69,8 +70,11 @@ const Navbar = () => {
         <nav className="navbar navbar-expand-md sticky-top shadow-sm px-4 px-lg-5 py-lg-0">
             {/* Logo */}
             <div className="navbar-brand p-0 d-flex align-items-center me-auto">
-                <img src={imgPath} alt="HA" className="img-fluid"
+                <img src={isHovered ? '/img/logo/lightHA_circle.png' : imgPath} alt="HA"
+                    className="img-fluid"
                     onClick={handleThemeChange}
+                    onMouseEnter={() => setIsHovered(true)}
+                    onMouseLeave={() => setIsHovered(false)}
                 />
             </div>
 

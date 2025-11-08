@@ -328,6 +328,12 @@
   animation-duration: 2.5s;
 }
 
+.badge-2:hover {
+  background: linear-gradient(135deg, #00ff9f, #00d4ff);
+  box-shadow: 0 0 12px #00d4ff, 0 0 24px #00ff9f;
+  transform: scale(1.05);
+}
+
 .badge-2 span {
   font-size: 1.5rem;
 }

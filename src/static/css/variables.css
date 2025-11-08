@@ -3,7 +3,7 @@
    ============================================ */
 
 :root {
-  /* ==================== BRAND COLORS (Never change) ==================== */
+  /* ==================== BRAND COLORS ==================== */
   --primary: #8b0000;        /* Main brand red - used for primary actions */
   --light: #bfbfbf;          /* Light gray - used for subtle elements */
   --dark: #1a1a1a;           /* Dark background - main dark color */
@@ -113,11 +113,6 @@
   --primary: #00ff9f;
   --light: #00d4ff;
   --dark: #0a0e27;
-
-  /* Brand Colors */
-  --primary: #00ff9f;
-  --light: #00d4ff;
-  --dark: #0a0e27;
   
   /* Background Colors */
   --bg-primary: #0a0e27;
@@ -171,11 +166,6 @@
   --light: #90e0ef;
   --dark: #001e3c;
 
-  /* Brand Colors */
-  --primary: #0077be;
-  --light: #90e0ef;
-  --dark: #001e3c;
-  
   /* Background Colors */
   --bg-primary: #001e3c;
   --bg-secondary: #003566;
