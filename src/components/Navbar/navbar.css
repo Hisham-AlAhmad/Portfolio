@@ -33,8 +33,6 @@
 }
 
 .navbar-brand:hover img {
-    background-image: url('/img/logo/lightHA_circle.png');
-    background: linear-gradient(135deg, #8b0000, #bfbfbf);
     box-shadow: 0 0 15px #bfbfbf, 0 0 20px #8b0000;
     transform: scale(1.05);
 }
