@@ -6,7 +6,7 @@
     width: 3.5rem; /* Same width as theme button */
     height: 3.5rem; /* Same height as theme button */
     background-color: var(--bg-secondary, #1a1a1a);
-    color: var(--primary);
+    color: var(--accent-primary);
     border: 2px solid var(--border-primary, rgba(139, 0, 0, 0.3));
     border-radius: 50%; /* Match theme button's circular shape */
     cursor: pointer;
