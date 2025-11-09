@@ -32,6 +32,7 @@ const StickerPeel = ({ imageSrc, name }) => {
     useEffect(() => {
         const target = dragTargetRef.current;
         const boundsEl = target.parentNode;
+        let currentRotation = gsap.getProperty(target, 'rotation');
 
         draggableInstanceRef.current = Draggable.create(target, {
             type: 'x,y',
@@ -42,7 +43,8 @@ const StickerPeel = ({ imageSrc, name }) => {
                 gsap.to(target, { rotation: rot, duration: 0.15, ease: 'power1.out' });
             },
             onDragEnd() {
-                gsap.to(target, { rotation: 0, duration: 0.8, ease: 'power2.out' });
+                // Store the final rotation instead of resetting to 0
+                currentRotation = gsap.getProperty(target, 'rotation');
             }
         })[0];
 
