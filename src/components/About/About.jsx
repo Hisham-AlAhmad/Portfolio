@@ -21,11 +21,8 @@ const About = () => {
   }, []);
 
   const handleThemeChange = () => {
-    // Toggle between cyberpunk and dark themes
     const newTheme = theme === 'light' ? 'dark' : 'light';
-    document.documentElement.setAttribute('data-theme', newTheme);
     setTheme(newTheme);
-    localStorage.setItem('theme', newTheme);
   };
 
   const skills = {
@@ -37,11 +34,6 @@ const About = () => {
       { name: "Java", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
       { name: "PHP", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" },
       { name: "C++", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" },
-    ],
-    Frameworks: [
-      { name: "React", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-      { name: "Bootstrap", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" },
-      { name: "Flask", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" }
     ],
     "AI & ML Libraries": [
       { name: "Pandas", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" },
@@ -57,6 +49,11 @@ const About = () => {
       { name: "PyCharm", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pycharm/pycharm-original.svg" },
       { name: "Figma", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" }
     ],
+    Frameworks: [
+      { name: "React", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+      { name: "Bootstrap", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" },
+      { name: "Flask", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" }
+    ],
     Database: [
       { name: "MySQL", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
       // { name: "MongoDB", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
@@ -67,18 +64,20 @@ const About = () => {
   const experiences = [
     {
       icon: "💻",
-      title: "Full Stack Developer",
+      title: "Full Stack Website",
       company: "Freelance",
-      date: "2021 - Present",
-      description: "Building custom web applications for clients worldwide using React, Python, and modern technologies."
+      date: "2025",
+      description: "Fresh Time Store, which have an ordering menu from Fresh Juice, Crepe, Pancake, etc...",
+      link: "https://freshtime1.com"
     },
     {
-      icon: "🚀",
-      title: "Web Developer",
-      company: "Personal Projects",
-      date: "2020 - 2021",
-      description: "Created personal projects to enhance skills in full-stack development."
-    }
+      icon: "🖼️",
+      title: "Editing Website",
+      company: "University graduation project",
+      date: "2025",
+      description: "Image editing website with Flask as backend.",
+      link: "https://github.com/Hisham-AlAhmad/University-Final-Project"
+    },
     // Add more experiences here - the section will expand vertically
   ];
 
@@ -88,13 +87,15 @@ const About = () => {
       title: "Computer Science",
       school: "Lebanese International University - LIU",
       date: "2021 - 2024",
-      description: "Earned a solid foundation in computer science through coursework and hands-on projects covering programming, algorithms, databases, and software development."
+      description: "Earned a solid foundation in computer science through coursework and hands-on projects covering programming, algorithms, databases, and software development.",
+      gpa: "3.18/4.0"
     }
   ];
 
   const stats = [
-    { number: "3+", label: "Years Experience" },
-    // { number: "50+", label: "Projects Completed" },
+    // { number: "2+", label: "Years Experience" },
+    { number: "5+", label: "Certifications Earned" },
+    { number: "500+", label: "Hours of Development" },
     { number: "100%", label: "Client Satisfaction" }
   ];
 
@@ -134,16 +135,19 @@ const About = () => {
           <div className="about-text">
             <h3 className="about-title">Hello! I'm Hisham Al Ahmad</h3>
             <p className="description">
-              A passionate Full Stack Developer with a love for creating elegant,
-              user-friendly web applications.
+              A highly motivated Computer Science graduate with a passion for problem-solving and technology.
+              I specialize in full-stack web development using React, Python, and Node.js, creating scalable,
+              user-friendly applications that balance design and functionality.
             </p>
             <p className="description">
-              I specialize in building scalable solutions using modern technologies
-              like React, Python, and Node.js.
+              I'm also experienced in Machine Learning, where I developed a deep learning model
+              for gender classification from images—an experience that strengthened
+              my analytical thinking and technical versatility.
             </p>
             <p className="description">
-              When I'm not coding, I explore new technologies, contribute to open-source
-              projects, or share my knowledge with the developer community.
+              Known for my creativity, organization, and positive energy,
+              I approach every project with focus and genuine dedication,
+              ensuring both functionality and polish in the final result.
             </p>
           </div>
         </div>
@@ -238,6 +242,9 @@ const About = () => {
                       <p className="experience-company">{exp.company}</p>
                       <p className="experience-date">{exp.date}</p>
                       <p className="experience-desc">{exp.description}</p>
+                      {exp.link &&
+                        <a href={`${exp.link}`} target="_blank" >{exp.link.replace(/^https?:\/\//, '')}</a>
+                      }
                     </div>
                   </div>
                 ))}
@@ -255,6 +262,7 @@ const About = () => {
                       <p className="education-school">{edu.school}</p>
                       <p className="education-date">{edu.date}</p>
                       <p className="education-desc">{edu.description}</p>
+                      <p className="education-gpa">GPA: {edu.gpa}</p>
                     </div>
                   </div>
                 ))}

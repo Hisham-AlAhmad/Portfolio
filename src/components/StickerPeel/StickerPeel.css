@@ -140,3 +140,55 @@
     touch-action: none;
   }
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .draggable {
+    width: 80px;
+    height: 96px;
+  }
+
+  .sticker-image,
+  .flap-image {
+    width: 80px;
+    height: 80px;
+  }
+
+  .sticker-name {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .draggable {
+    width: 70px;
+    height: 84px;
+  }
+
+  .sticker-image,
+  .flap-image {
+    width: 70px;
+    height: 70px;
+  }
+
+  .sticker-name {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .draggable {
+    width: 60px;
+    height: 72px;
+  }
+
+  .sticker-image,
+  .flap-image {
+    width: 60px;
+    height: 60px;
+  }
+
+  .sticker-name {
+    font-size: 0.65rem;
+  }
+}
