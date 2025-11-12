@@ -17,11 +17,8 @@ const Header = () => {
     const roles = ['Full Stack Developer', 'React Developer', 'Python Developer'];
 
     const handleThemeChange = () => {
-        // Toggle between cyberpunk and dark themes
         const newTheme = theme === 'cyberpunk' ? 'dark' : 'cyberpunk';
-        document.documentElement.setAttribute('data-theme', newTheme);
         setTheme(newTheme);
-        localStorage.setItem('theme', newTheme);
     };
 
     return (

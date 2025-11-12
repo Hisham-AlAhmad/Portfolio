@@ -56,12 +56,8 @@ const Navbar = () => {
     }, []);
 
     const handleThemeChange = () => {
-        // Toggle between light and dark themes
         const newTheme = theme === 'light' ? 'dark' : 'light';
-        document.documentElement.setAttribute('data-theme', newTheme);
         setTheme(newTheme);
-        localStorage.setItem('theme', newTheme);
-
         // chnage logo based on theme
         setImgPath(newTheme === 'dark' ? '/img/logo/darkHA_circle.png' : '/img/logo/lightHA_circle.png');
     };
