@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './Contact.css';
+import { Link } from 'react-router-dom';
 
 const Contact = () => {
     // Form state
@@ -158,6 +159,14 @@ const Contact = () => {
         }
     };
 
+    function whatsapp() {
+        let waLink = '';
+        let number = '96181212862';
+
+        waLink = `https://wa.me/${number}`;
+        window.open(waLink, '_blank');
+    }
+
     return (
         <section className="contact-container" id="contact">
             {/* Background Elements */}
@@ -215,6 +224,19 @@ const Contact = () => {
                                 <h3>Response Time</h3>
                             </div>
                             <p>Usually within 2 Days</p>
+                        </div>
+
+                        <div className="info-card">
+                            <div className="info-card-header">
+                                <div className="info-icon">
+                                    <i className="ti ti-brand-whatsapp"></i>
+                                </div>
+                                <h3>WhatsApp</h3>
+                            </div>
+                            <Link onClick={() => whatsapp()} >
+                                <i className="ti ti-phone me-2"></i>
+                                +961 81212862
+                            </Link>
                         </div>
                     </div>
 
