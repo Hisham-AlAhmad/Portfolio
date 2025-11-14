@@ -398,7 +398,7 @@
 /* Responsive Design */
 @media (min-width: 768px) {
   .contact-container {
-    padding: 8rem 2rem;
+    padding: 6rem 2rem;
   }
 
   .contact-title {

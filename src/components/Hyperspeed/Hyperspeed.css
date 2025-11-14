@@ -1,0 +1,22 @@
+/* ============================================
+   HYPERSPEED COMPONENT STYLES
+   ============================================ */
+
+#lights {
+  width: 100%;
+  height: 70vh;
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-primary);
+  cursor: pointer;
+  touch-action: none;
+}
+
+#lights canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
