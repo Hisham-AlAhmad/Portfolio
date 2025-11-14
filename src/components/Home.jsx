@@ -4,17 +4,32 @@ import Certificates from "./Certificates/Certificates";
 import Contact from "./Contact/Contact";
 import Hyperspeed from "./Hyperspeed/Hyperspeed";
 import { UseTheme } from "./Hooks/ThemeProvider";
+import ClickSpark from "./ClickSpark/ClickSpark";
 
 const Home = () => {
     const { theme, setTheme } = UseTheme();
 
     return (
         <>
-            <Header />
-            <About />
-            <Certificates />
-            <Contact />
-            <Hyperspeed theme={theme} />
+            <ClickSpark>
+                <Header />
+            </ClickSpark>
+
+            <ClickSpark sparkColor="var(--primary)">
+                <About />
+            </ClickSpark>
+
+            <ClickSpark sparkColor="var(--light)">
+                <Certificates />
+            </ClickSpark>
+
+            <ClickSpark sparkColor="var(--text-primary)">
+                <Contact />
+            </ClickSpark>
+
+            <ClickSpark sparkColor="var(--light)">
+                <Hyperspeed theme={theme} />
+            </ClickSpark>
         </>
     );
 }
