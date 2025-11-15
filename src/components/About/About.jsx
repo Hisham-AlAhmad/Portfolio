@@ -4,21 +4,10 @@ import { UseTheme } from "../Hooks/ThemeProvider";
 import "./About.css";
 
 const About = () => {
-  const [isVisible, setIsVisible] = useState(false);
   const [activeTab, setActiveTab] = useState("skills");
   const [skillView, setSkillView] = useState("categories"); // 'categories' or 'interactive'
 
   const { theme, setTheme } = UseTheme();
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => entry.isIntersecting && setIsVisible(true),
-      { threshold: 0.1 }
-    );
-    const section = document.getElementById("about-section");
-    if (section) observer.observe(section);
-    return () => observer.disconnect();
-  }, []);
 
   const handleThemeChange = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';
@@ -106,7 +95,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about-section" className={`about-section ${isVisible ? "visible" : ""}`}>
+    <section id="about" className="about-section">
       <div className="bg-elements">
         <div className="bg-circle bg-circle1"></div>
         <div className="bg-circle bg-circle2"></div>

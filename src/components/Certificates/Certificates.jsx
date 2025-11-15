@@ -115,13 +115,13 @@ const Certificates = () => {
             ([entry]) => entry.isIntersecting && setIsVisible(true),
             { threshold: 0.1 }
         );
-        const section = document.getElementById('certificates-section');
+        const section = document.getElementById('certificates');
         if (section) observer.observe(section);
         return () => observer.disconnect();
     }, []);
 
     return (
-        <section id="certificates-section" className={`certificates-section ${isVisible ? 'visible' : ''}`}>
+        <section id="certificates" className={`certificates-section ${isVisible ? 'visible' : ''}`}>
             <div className="bg-elements">
                 <div className="bg-circle bg-circle1"></div>
                 <div className="bg-circle bg-circle2"></div>

@@ -22,7 +22,7 @@ const Header = () => {
     };
 
     return (
-        <div className="header-container">
+        <section id='home' className="header-container">
             {/* Animated background elements */}
             <div className="bg-elements">
                 <div className="bg-circle bg-circle-1"></div>
@@ -140,7 +140,7 @@ const Header = () => {
             <div className="scroll-indicator">
                 <i className="ti ti-arrow-down"></i>
             </div>
-        </div>
+        </section>
     );
 };
 
